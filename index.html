@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CoDev Legal Partnership Operating Framework</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap">
+<style>
+  @page{ size:Letter; margin:0.8in 0.85in 0.75in; }
+  *{ box-sizing:border-box; }
+  body{ font-family:Georgia,"Times New Roman",serif; color:#26333f; font-size:10.8pt; line-height:1.5; margin:0; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+  .page{ max-width:7.2in; margin:0 auto; }
+  h1{ font-size:20pt; text-align:center; color:#0f2233; margin:6px 0 2px; }
+  .sub{ text-align:center; font-style:italic; color:#5a6b78; font-size:11pt; margin:0 0 6px; }
+  .gold{ border:0; border-top:2px solid #a9782f; margin:10px 0 16px; }
+  h2{ font-size:12.5pt; color:#0f2233; margin:20px 0 7px; } h2 .n{ color:#a9782f; }
+  p{ margin:7px 0; text-align:justify; }
+  ul{ margin:6px 0; padding-left:20px; } li{ margin:5px 0; }
+  .defterm{ font-weight:bold; color:#0f2233; }
+  table{ border-collapse:collapse; width:100%; font-size:10pt; margin:10px 0; }
+  th,td{ border:1px solid #d8dee6; padding:7px 9px; text-align:left; vertical-align:top; overflow-wrap:break-word; word-break:break-word; }
+  th{ background:#0f2233; color:#fff; font-size:9.5pt; }
+  .jt td:first-child{ font-weight:bold; color:#0f2233; width:26%; }
+  .foot{ text-align:center; font-size:8pt; color:#8a97a2; border-top:1px solid #e4e8ec; margin-top:22px; padding-top:6px; }
+  .note{ font-size:9pt; color:#5a6b78; font-style:italic; }
+
+  .esign-bar{ background:#0f2233; color:#fff; border-radius:10px; padding:14px 18px; margin:0 0 16px; font-family:Arial,sans-serif; }
+  .esign-bar h3{ margin:0 0 4px; font-size:13pt; } .esign-bar p{ margin:3px 0; color:#d6e2ef; font-size:10pt; text-align:left; }
+  .esign-bar .how{ display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; } .esign-bar .how div{ flex:1 1 150px; background:rgba(255,255,255,.08); border-radius:7px; padding:8px 11px; font-size:9.5pt; } .esign-bar .how b{ color:#c79a4f; }
+  .status{ display:flex; align-items:center; gap:10px; margin-top:10px; flex-wrap:wrap; }
+  .pill{ font-size:9.5pt; font-weight:bold; padding:4px 12px; border-radius:999px; background:#c79a4f; color:#3a2b06; }
+  .btn{ font-family:Arial,sans-serif; font-size:10pt; font-weight:bold; border:0; border-radius:7px; padding:10px 16px; cursor:pointer; -webkit-appearance:none; appearance:none; touch-action:manipulation; }
+  .btn.pri{ background:#c79a4f; color:#3a2b06; } .btn.pri:disabled{ background:#6b7683; color:#c8ced6; cursor:not-allowed; } .btn.ghost{ background:transparent; color:#fff; border:1px solid #7f93a8; }
+  .badge{ display:inline-flex; gap:6px; background:#e3f1ea; color:#145c3f; border:1px solid #1c7a54; border-radius:999px; padding:4px 12px; font-size:9pt; font-weight:bold; font-family:Arial,sans-serif; }
+  .sigwrap{ display:flex; gap:16px; flex-wrap:wrap; margin-top:10px; }
+  .esc{ flex:1 1 320px; border:1px solid #d8dee6; border-radius:10px; padding:14px 15px; background:#fafcff; font-family:Arial,sans-serif; }
+  .esc h4{ margin:0 0 3px; color:#0f2233; font-size:12pt; } .esc .role{ font-size:9pt; color:#5a6b78; margin:0 0 10px; }
+  .esc .row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:8px; } .esc .f{ flex:1 1 100%; min-width:0; }
+  .esc label{ display:block; font-size:8.5pt; font-weight:bold; color:#0f2233; text-transform:uppercase; letter-spacing:.03em; margin-bottom:3px; }
+  .esc input[type=text],.esc input[type=email]{ width:100%; font-family:Arial,sans-serif; font-size:16px; padding:10px 10px; border:1px solid #b9c6d3; border-radius:6px; -webkit-appearance:none; appearance:none; background:#fff; color:#26333f; }
+  .tabs{ display:flex; gap:6px; margin-bottom:8px; } .tabs button{ font-family:Arial,sans-serif; font-size:9pt; font-weight:bold; border:1px solid #b9c6d3; background:#eef3f8; color:#0f2233; border-radius:6px 6px 0 0; padding:7px 12px; cursor:pointer; -webkit-appearance:none; appearance:none; touch-action:manipulation; } .tabs button.on{ background:#0f2233; color:#fff; border-color:#0f2233; }
+  .pane{ display:none; } .pane.on{ display:block; }
+  .tp{ font-family:'Dancing Script',cursive; font-size:26pt; color:#0a2a52; min-height:46px; border-bottom:1px dashed #b9c6d3; padding:2px 4px; }
+  canvas.draw{ width:100%; height:120px; border:1px dashed #b9c6d3; border-radius:6px; background:#fff; touch-action:none; display:block; }
+  .consent{ display:flex; gap:8px; align-items:flex-start; margin:9px 0; font-size:9pt; color:#37424e; } .consent input{ margin-top:2px; }
+  .mini{ font-size:8.5pt; color:#6a7684; margin-top:4px; font-family:Arial,sans-serif; }
+  .sigslot{ min-height:44px; display:flex; align-items:flex-end; } .sigslot .typed{ font-family:'Dancing Script',cursive; font-size:23pt; color:#0a2a52; line-height:1; } .sigslot img{ max-height:44px; }
+  .audit{ border:1.5px solid #0f2233; border-radius:9px; padding:12px 15px; margin-top:20px; font-family:Arial,sans-serif; page-break-inside:avoid; }
+  .audit h3{ margin:0 0 6px; color:#0f2233; } .audit table{ margin:0; } .audit td,.audit th{ font-size:9pt; }
+  .fp{ font-family:Consolas,monospace; font-size:8.3pt; color:#0f2233; word-break:break-all; }
+  .esign-bottom{ text-align:center; margin-top:24px; padding-top:16px; border-top:1px solid #e4e8ec; }
+  @media screen and (max-width:640px){ .page{ padding:0 15px; } h1{ font-size:17pt; } table{ font-size:10pt; table-layout:fixed; } .jt td:first-child{ width:34%; } .esign-bar .how div{ flex:1 1 100%; } .status .btn{ flex:1 1 100%; } .btn{ padding:12px 16px; } }
+  @media print{ .esign-bar,.esc,.badge,.no-print{ display:none !important; } .sigslot{ border-bottom:1px solid #333; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="esign-bar no-print">
+    <h3>Electronic signature — Legal Partnership Operating Framework</h3>
+    <p>This framework is adopted by both parties on signing. Each party completes its own name, title and email, then signs by typing or drawing.</p>
+    <div class="how"><div><b>1 &middot; Review</b> the framework above.</div><div><b>2 &middot; Complete</b> each party's name, title and email.</div><div><b>3 &middot; Sign</b> by typing or drawing, tick consent, press <b>Sign</b>.</div><div><b>4 &middot; Download</b> the executed copy when both parties have signed.</div></div>
+    <div class="status"><span class="pill" id="statusPill">0 of 2 parties signed</span><button class="btn ghost" id="resetBtn">Reset</button></div>
+  </div>
+
+  <h1>Legal Partnership Operating Framework</h1>
+  <div class="sub">CoDev Property &amp; its Strategic Legal &amp; Transaction Partner · Version 1.0 · September 2026</div>
+  <hr class="gold">
+
+  <h2>Purpose</h2>
+  <p>This framework sets out how legal counsel supports development assessment and CoDev transactions. It records the operating model agreed between CoDev Property and its Strategic Legal &amp; Transaction Partner, ahead of the definitive partnership terms, client engagements, platform wording and legal work instructions.</p>
+
+  <h2><span class="n">1</span>&nbsp; Partnership roles</h2>
+  <ul>
+    <li><span class="defterm">CoDev</span> owns platform decisions, developer onboarding, buyer qualification, overall project assurance and Deal Room administration.</li>
+    <li><span class="defterm">Counsel</span> owns its agreed legal review scope, professional judgment, written findings, legal conditions and transaction documentation under separate instructions.</li>
+    <li><span class="defterm">Developers and landowners</span> supply evidence, answer legal queries and remedy conditions. Buyers decide whether to proceed and may instruct independent counsel.</li>
+    <li><span class="defterm">Legal clearance</span> concerns the defined legal workstream only. CoDev alone decides whether a development is listed or described as Investment Ready.</li>
+  </ul>
+
+  <h2><span class="n">2</span>&nbsp; Development and buyer journey</h2>
+  <table class="jt"><thead><tr><th>Stage</th><th>Owner and output</th></tr></thead><tbody>
+    <tr><td>Onboard and screen</td><td>CoDev verifies the developer and receives the project pack; commercial screening determines whether to commission legal review.</td></tr>
+    <tr><td>Review and resolve</td><td>Counsel checks agreed title, land rights, party authority, JV/SPV arrangements, approvals and transaction structure; issues queries and a scoped report.</td></tr>
+    <tr><td>Assurance decision</td><td>Counsel records cleared, conditional, material issue or rejected status. CoDev checks other commercial, financial and technical gates before approving a listing.</td></tr>
+    <tr><td>Buyer qualification</td><td>CoDev assesses buyer intent, capacity and readiness, completes applicable identity checks, and records confidentiality terms before Deal Room access.</td></tr>
+    <tr><td>Transaction</td><td>Counsel prepares or reviews agreed reservation, sale, subscription or JV documents. CoDev coordinates signatures, funding evidence and milestone records.</td></tr>
+    <tr><td>Completion</td><td>Counsel supports agreed completion and perfection tasks under a transaction instruction; CoDev archives the approved completion record.</td></tr>
+  </tbody></table>
+
+  <h2><span class="n">3</span>&nbsp; Legal review and platform controls</h2>
+  <ul>
+    <li>Each development has a review case, checklist, evidence register, counsel decision, open conditions, decision date and versioned report. Material issues block commitment until counsel records a new disposition.</li>
+    <li>Only an authorised counsel user can issue or change a legal decision. CoDev controls the public display and cannot turn a pending review into legal clearance.</li>
+    <li>A legal badge, if approved, states the review scope and date and links to limitations and outstanding disclosed conditions. Counsel's name or logo appears only with written brand permission.</li>
+    <li>The Deal Room shows only approved versions to authorised buyers, with access logs, acknowledgements, controlled downloads and revocation on withdrawal or expiry. Material document changes trigger renewed notice or acknowledgement.</li>
+  </ul>
+
+  <h2><span class="n">4</span>&nbsp; Professional boundaries</h2>
+  <p>Each instruction identifies counsel's client and the capacity in which it acts. CoDev will not imply that project counsel also represents buyers. Counsel defines conflict checks, reliance on its reports, permissible disclosure, and circumstances requiring independent buyer advice.</p>
+  <p>The parties agree responsibility for identity checks, anti-money-laundering processes, privacy notices, data access, retention and incident handling, with reference to the applicable Nigerian requirements.</p>
+
+  <h2><span class="n">5</span>&nbsp; Commercial and service schedule to agree</h2>
+  <ul>
+    <li>Scope and exclusions for corporate/platform advice, project due diligence, transaction work, and completion or title perfection.</li>
+    <li>Fee basis for each service, payer, invoicing triggers, disbursements and any separately instructed buyer advice; no referral or revenue arrangement assumed.</li>
+    <li>Target turnaround times after receipt of a complete pack, query escalation, named contacts and substitute reviewer arrangements.</li>
+    <li>Ownership and permitted platform use of templates and reports, confidentiality, professional indemnity, liability and termination handover.</li>
+  </ul>
+
+  <h2><span class="n">6</span>&nbsp; Immediate decisions and next steps</h2>
+  <ul>
+    <li>Counsel to confirm this framework and nominate a relationship lead and legal review lead.</li>
+    <li>Jointly approve a pilot legal checklist, sample report, condition categories and proposed public verification wording.</li>
+    <li>Select one live development for a pilot, confirm its scope, fee and document pack, then test the legal review and Deal Room workflow.</li>
+    <li>Convert the agreed model into a partnership agreement and service schedules before public use of the firm's branding or formal legal verification claims.</li>
+  </ul>
+
+  <h2>Acknowledgement and agreement to proceed</h2>
+  <p>By signing below, the parties adopt this operating framework and agree to proceed with the pilot and to enter the definitive partnership agreement described in Section 6. The definitive partnership agreement and service schedules will set out the detailed legal, fee and professional-responsibility terms.</p>
+
+  <div class="sigwrap" id="sigForms"></div>
+
+  <div class="audit" id="auditWrap" style="display:none"><h3>Electronic signature record</h3>
+    <p class="note" style="margin:0 0 6px">Executed electronically. The fingerprint is a SHA-256 hash binding both signatures to this framework.</p>
+    <table><thead><tr><th>Party</th><th>Signatory / title</th><th>Email</th><th>Method</th><th>Executed</th></tr></thead><tbody id="auditBody"></tbody></table>
+    <p style="margin:8px 0 0"><b>Fingerprint (SHA-256):</b> <span class="fp" id="fp">— (completes when both parties sign)</span></p></div>
+
+  <div class="esign-bottom no-print">
+    <button class="btn pri" id="downloadBtn" style="font-size:11pt;padding:12px 22px" disabled>Download / Print executed copy</button>
+    <p class="mini" id="savedNote">The download unlocks once both parties have signed above.</p>
+  </div>
+
+  <div class="foot">CoDev · codevproperty.com · Legal Partnership Operating Framework · Confidential</div>
+</div>
+
+<script>
+(function(){
+var KEY='codev-legal-framework-esign-v1', st=load();
+var SIGNERS=[{key:'codev',party:'For CoDev Property'},{key:'partner',party:'For the Strategic Legal & Transaction Partner'}];
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return {}}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+function esc(s){return String(s==null?"":s).replace(/[&<>\"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]})}
+function fmt(iso){try{return new Date(iso).toLocaleString()}catch(e){return iso}}
+
+var host=document.getElementById('sigForms');
+host.innerHTML=SIGNERS.map(function(s){var k=s.key;return '<div class="esc" id="esc-'+k+'"><h4>'+esc(s.party.replace("For ",""))+'</h4><div class="role">'+esc(s.party)+'</div>'+
+  '<div class="sigslot" id="sig-'+k+'"><span style="color:#9aa6b2;font-style:italic;font-size:9pt">Awaiting signature</span></div>'+
+  '<div class="row" style="margin-top:8px"><div class="f"><label>Full name</label><input type="text" id="nm-'+k+'" placeholder="Authorised signatory"></div></div>'+
+  '<div class="row"><div class="f"><label>Title</label><input type="text" id="ti-'+k+'" placeholder="e.g. Director / Partner"></div></div>'+
+  '<div class="row"><div class="f"><label>Email</label><input type="email" id="em-'+k+'" placeholder="name@firm.com"></div></div>'+
+  '<div class="tabs"><button type="button" class="on" data-k="'+k+'" data-t="type">Type</button><button type="button" data-k="'+k+'" data-t="draw">Draw</button></div>'+
+  '<div class="pane on" id="pane-type-'+k+'"><label>Type your name to adopt it as your signature</label><input type="text" id="typed-'+k+'" placeholder="Type your full name"><div class="tp" id="prev-'+k+'"></div></div>'+
+  '<div class="pane" id="pane-draw-'+k+'"><label>Draw your signature</label><canvas class="draw" id="cv-'+k+'" width="620" height="150"></canvas><button type="button" class="btn ghost" style="color:#0f2233;border-color:#b9c6d3;margin-top:6px" id="clr-'+k+'">Clear</button></div>'+
+  '<div class="consent"><input type="checkbox" id="cons-'+k+'"><label for="cons-'+k+'" style="font-weight:normal;text-transform:none;letter-spacing:0">I am authorised to sign for this party and I adopt this electronic signature as the legal equivalent of my handwritten signature; this framework may be executed in counterparts, including electronically.</label></div>'+
+  '<button type="button" class="btn pri" id="sign-'+k+'">Sign for this party</button><div class="mini">Records name, title, email and a timestamp below.</div></div>';}).join('');
+
+SIGNERS.forEach(function(s){ wire(s.key); if(st[s.key]) renderSigner(s.key); });
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){var k=b.dataset.k,t=b.dataset.t;var host=document.getElementById('esc-'+k);host.querySelector('.tabs button[data-t=type]').classList.toggle('on',t==='type');host.querySelector('.tabs button[data-t=draw]').classList.toggle('on',t==='draw');document.getElementById('pane-type-'+k).classList.toggle('on',t==='type');document.getElementById('pane-draw-'+k).classList.toggle('on',t==='draw');});});
+
+function wire(k){
+  var ti=document.getElementById('typed-'+k),pv=document.getElementById('prev-'+k);
+  if(ti)ti.addEventListener('input',function(){pv.textContent=ti.value});
+  var c=document.getElementById('cv-'+k),ctx=c.getContext('2d'),drawing=false,dirty=false,last=null;
+  ctx.lineWidth=2.2;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#0a2a52';
+  function pos(e){var r=c.getBoundingClientRect();var cx=e.clientX,cy=e.clientY;if(e.touches&&e.touches[0]){cx=e.touches[0].clientX;cy=e.touches[0].clientY;}return {x:(cx-r.left)*(c.width/r.width),y:(cy-r.top)*(c.height/r.height)}}
+  function sd(e){drawing=true;last=pos(e);e.preventDefault()}
+  function mv(e){if(!drawing)return;var p=pos(e);ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.stroke();last=p;dirty=true;e.preventDefault()}
+  function en(){drawing=false}
+  c.addEventListener('mousedown',sd);c.addEventListener('mousemove',mv);window.addEventListener('mouseup',en);
+  c.addEventListener('touchstart',sd,{passive:false});c.addEventListener('touchmove',mv,{passive:false});c.addEventListener('touchend',en);c.addEventListener('touchcancel',en);
+  document.getElementById('clr-'+k).addEventListener('click',function(){ctx.clearRect(0,0,c.width,c.height);dirty=false});
+  c._isDirty=function(){return dirty}; c._data=function(){return c.toDataURL('image/png')};
+  document.getElementById('sign-'+k).addEventListener('click',function(){
+    var name=val('nm-'+k),title=val('ti-'+k),email=val('em-'+k),consent=document.getElementById('cons-'+k).checked;
+    var host=document.getElementById('esc-'+k),typeOn=host.querySelector('.tabs button[data-t=type]').classList.contains('on');
+    if(!name){alert('Please enter the signatory name.');return}
+    if(!title){alert('Please enter the title.');return}
+    if(!consent){alert('Please tick the electronic-signature consent box.');return}
+    var method,sig;
+    if(typeOn){var typed=val('typed-'+k)||name;method='Typed';sig={type:'typed',value:typed}}
+    else{if(!c._isDirty()){alert('Please draw the signature, or switch to Type.');return}method='Drawn';sig={type:'drawn',value:c._data()}}
+    st[k]={name:name,title:title,email:email,method:method,sig:sig,ts:new Date().toISOString()};save();renderSigner(k);refresh();
+  });
+}
+function val(id){var e=document.getElementById(id);return e?e.value.trim():''}
+function renderSigner(k){var d=st[k];if(!d)return;var slot=document.getElementById('sig-'+k);
+  if(d.sig.type==='typed'){slot.innerHTML='<span class="typed"></span>';slot.querySelector('.typed').textContent=d.sig.value;}
+  else{slot.innerHTML='<img alt="signature">';slot.querySelector('img').src=d.sig.value;}
+  var esc2=document.getElementById('esc-'+k);
+  var meta=SIGNERS.filter(function(s){return s.key===k})[0];
+  esc2.innerHTML='<h4>'+esc(meta.party.replace('For ',''))+'</h4><div class="role">'+esc(meta.party)+'</div><div class="sigslot">'+slot.innerHTML+'</div>'+
+    '<div class="badge" style="margin-top:10px">&#10004; Signed by '+esc(d.name)+', '+esc(d.title)+' — '+fmt(d.ts)+'</div>'+
+    '<div class="mini no-print" style="margin-top:6px"><a href="#" data-undo="'+k+'">Undo signature</a></div>';
+  var u=esc2.querySelector('[data-undo]'); if(u)u.addEventListener('click',function(e){e.preventDefault();if(confirm('Remove this signature?')){delete st[k];save();location.reload();}});
+}
+function refresh(){
+  var signed=SIGNERS.filter(function(s){return st[s.key]}).length;
+  document.getElementById('statusPill').textContent=signed+' of 2 parties signed';
+  var both=signed===2;
+  document.getElementById('downloadBtn').disabled=!both;
+  document.getElementById('savedNote').textContent=both?'Both parties have executed. Download / Print the executed copy.':'The download unlocks once both parties have signed above.';
+  var any=signed>0; document.getElementById('auditWrap').style.display=any?'block':'none';
+  var body=document.getElementById('auditBody');body.innerHTML=SIGNERS.map(function(s){var d=st[s.key];if(!d)return '';return '<tr><td>'+esc(s.party.replace('For ',''))+'</td><td>'+esc(d.name)+' / '+esc(d.title)+'</td><td>'+esc(d.email||'—')+'</td><td>'+d.method+'</td><td>'+fmt(d.ts)+'</td></tr>';}).join('');
+  fp(both);
+}
+async function fp(both){var el=document.getElementById('fp');if(!both){el.textContent='— (completes when both parties sign)';return;}
+  try{var basis='CODEV-LEGAL-FRAMEWORK|v1.0|'+SIGNERS.map(function(s){var d=st[s.key];return s.key+':'+d.name+':'+d.title+':'+d.email+':'+d.method+':'+d.ts+':'+(d.sig.type==='typed'?d.sig.value:d.sig.value.length)}).join('|');
+    var buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(basis));
+    el.textContent=Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0')}).join('');
+  }catch(e){el.textContent='(unavailable — open over https to generate)';}
+}
+document.getElementById('downloadBtn').addEventListener('click',function(){window.print()});
+document.getElementById('resetBtn').addEventListener('click',function(){if(confirm('Clear all signatures on this device?')){try{localStorage.removeItem(KEY)}catch(e){}location.reload();}});
+refresh();
+})();
+</script>
+</body>
+</html>
